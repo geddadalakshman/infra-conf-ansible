@@ -8,7 +8,7 @@
     path: /usr/share/nginx/html
     state: absent
 
-- name: creating the new directory
+- name: creating application directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: directory
@@ -18,3 +18,8 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
     remote_src: yes
+
+- name: Coping the configuration file
+  ansible.builtin.copy:
+    src: /files/nginx.conf
+    dest: /etc/nginx/default.d/roboshop.conf
