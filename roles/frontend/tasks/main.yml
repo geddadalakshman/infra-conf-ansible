@@ -8,3 +8,8 @@
     path: /usr/share/nginx/html
     state: absent
 
+- name: creating the new directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
