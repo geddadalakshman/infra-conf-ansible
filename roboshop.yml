@@ -1,0 +1,5 @@
+- name: run {{role_name}} setup
+  hosts: localhost
+  become: true
+  roles:
+    "{{ role_name }}"
