@@ -1,5 +1,5 @@
 - name: Install nginx
-  yum:
+  ansible.builtin.yum:
     name: nginx
     state: installed
 
@@ -13,3 +13,8 @@
     path: /usr/share/nginx/html
     state: directory
 
+- name: Download dependencies of frontend
+  ansible.builtin.unarchive:
+    src: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
