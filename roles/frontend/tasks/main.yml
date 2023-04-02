@@ -2,3 +2,9 @@
   yum:
     name: nginx
     state: installed
+
+- name: Deleting old content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
