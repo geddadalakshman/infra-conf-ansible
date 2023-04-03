@@ -19,7 +19,7 @@
     regexp: 120.0.0.1
     replace: 0.0.0.0
 
-- name: Enabling and restarting the mongodb
+- name: Enabling and restarting the redis
   systemd:
     name: redis
     state: restarted
