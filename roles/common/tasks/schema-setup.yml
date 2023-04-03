@@ -13,3 +13,14 @@
 
     - name: load schema
       shell: mongo --host mongodb-dev.devops71.tech </app/schema/catalogue.js
+
+- name: MySQL Schema
+  when: schema_type == "mysql"
+  block:
+    - name: Install MySQL Client
+      ansible.builtin.yum:
+        name: mysql
+        state: installed
+
+    - name: load schema
+      shell: mysql -h mysql-dev.devops71.tech -uroot -pRoboShop@1 < /app/schema/shipping.sql

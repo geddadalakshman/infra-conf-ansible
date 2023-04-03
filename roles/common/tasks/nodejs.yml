@@ -10,11 +10,11 @@
   import_tasks:
     file: app_preq.yml
 
-- name: systemd setup
-  import_tasks:
-    file: systemd.yml
-
 - name: load schema
   import_tasks:
     file: schema-setup.yml
   when: schema_setup is defined
+
+- name: systemd setup
+  import_tasks:
+    file: systemd.yml
