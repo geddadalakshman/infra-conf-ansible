@@ -19,3 +19,4 @@
 
 - name: set root password
   shell: mysql_secure_installation --set-root-pass Roboshop@1
+  ignore_errors: yes
