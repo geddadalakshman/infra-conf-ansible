@@ -1,0 +1,4 @@
+- name: Load nodejs
+  import_roles:
+    name: common
+    tasks_from: nodejs
