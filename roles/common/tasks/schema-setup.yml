@@ -1,5 +1,5 @@
 - name: mongodb setup
-  when: schema == mongo
+  when: schema_type == "mongo"
   block:
     - name: setup mongodb repo file
       copy:
