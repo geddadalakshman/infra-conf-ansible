@@ -1,11 +1,11 @@
 - name: systemd setup
   copy:
-    src: catalogue.service
-    dest: /etc/systemd/system/catalogue.service
+    src: "{{ component }}.service"
+    dest: /etc/systemd/system/{{ component }}.service
 
 - name: Enable and restart the service
   systemd:
-    name: catalogue
+    name: "{{ component }}"
     enabled: true
     state: restarted
     daemon_reload: true
