@@ -10,6 +10,13 @@
   import_tasks:
     file: app_preq.yml
 
+- name: Installing NodeJS Dependencies
+  #  community.general.npm:
+  #    path: /app
+  shell: npm install
+  args:
+    chdir: /app
+
 - name: load schema
   import_tasks:
     file: schema-setup.yml

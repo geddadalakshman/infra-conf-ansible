@@ -17,10 +17,3 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
     dest: /app
     remote_src: yes
-
-- name: Installing NodeJS Dependencies
-#  community.general.npm:
-#    path: /app
-  shell: npm install
-  args:
-    chdir: /app
