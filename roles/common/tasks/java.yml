@@ -1,22 +1,22 @@
-- name: Install maven
-  yum:
-    name: maven
-    state: installed
-
-- name: App_prerequisites
-  import_tasks:
-    file: app_preq.yml
-
-- name: Install maven dependencies
-  shell: mvn clean package; mv target/shipping-1.0.jar shipping.jar
-  args:
-    chdir: /app
-
-- name: systemd-setup
-  import_tasks:
-    file: systemd.yml
-
-- name: load schema
-  import_tasks:
-    file: schema-setup.yml
-  when: schema_type is defined
+#- name: Install maven
+#  yum:
+#    name: maven
+#    state: installed
+#
+#- name: App_prerequisites
+#  import_tasks:
+#    file: app_preq.yml
+#
+#- name: Install maven dependencies
+#  shell: mvn clean package; mv target/shipping-1.0.jar shipping.jar
+#  args:
+#    chdir: /app
+#
+#- name: systemd-setup
+#  import_tasks:
+#    file: systemd.yml
+#
+#- name: load schema
+#  import_tasks:
+#    file: schema-setup.yml
+#  when: schema_type is defined

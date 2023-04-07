@@ -1,29 +1,29 @@
-- name: Setup Erlang repos
-  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
-
-- name: Setup rabbitmq repos
-  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
-
-- name: Install Erlang and rabbitmq
-  yum:
-    name:
-      - erlang
-      - rabbitmq-server
-    state: installed
-
-- name: Enabling and restarting the rabbitmq
-  systemd:
-    name: rabbitmq-server
-    state: restarted
-    enabled: true
-
-- name: Add Application User and set permissions
-  community.rabbitmq.rabbitmq_user:
-    user: roboshop
-    password: roboshop123
-    permissions:
-      - vhost: /
-        configure_priv: .*
-        read_priv: .*
-        write_priv: .*
-    state: present
+#- name: Setup Erlang repos
+#  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+#
+#- name: Setup rabbitmq repos
+#  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+#
+#- name: Install Erlang and rabbitmq
+#  yum:
+#    name:
+#      - erlang
+#      - rabbitmq-server
+#    state: installed
+#
+#- name: Enabling and restarting the rabbitmq
+#  systemd:
+#    name: rabbitmq-server
+#    state: restarted
+#    enabled: true
+#
+#- name: Add Application User and set permissions
+#  community.rabbitmq.rabbitmq_user:
+#    user: roboshop
+#    password: roboshop123
+#    permissions:
+#      - vhost: /
+#        configure_priv: .*
+#        read_priv: .*
+#        write_priv: .*
+#    state: present
