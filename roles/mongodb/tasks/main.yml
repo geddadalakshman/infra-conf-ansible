@@ -8,10 +8,10 @@
     name: mongodb-org
     state: installed
 
-- name: Changing the listener address from 120.0.0.1 to 0.0.0.0
+- name: Changing the listener address from 127.0.0.1 to 0.0.0.0
   replace:
     path: /etc/mongod.conf
-    regexp: 120.0.0.1
+    regexp: 127.0.0.1
     replace: 0.0.0.0
 
 - name: Enabling and restarting the mongodb
