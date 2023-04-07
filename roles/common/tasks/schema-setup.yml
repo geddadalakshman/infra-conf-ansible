@@ -4,7 +4,7 @@
     - name: setup mongodb repo file
       copy:
         src: mongodb.repo
-        dest: /etc/yum.repos.d/mongo.repo
+        dest: /etc/yum.repos.d/mongodb.repo
 
     - name: install mongodb
       yum:
@@ -14,7 +14,7 @@
     - name: load schema
       shell: mongo --host mongodb-dev.devops71.tech </app/schema/{{ component }}.js
 
-- name: MySQL Schema
+- name: MySQL Schema setup
   when: schema_type == "mysql"
   block:
     - name: Install MySQL Client
