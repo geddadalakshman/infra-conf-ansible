@@ -1,9 +1,10 @@
 - name: Install Python
   yum:
     name:
-      - python36
+      - python3.6
       - gcc
       - python3-devel
+    state: installed
 
 - name: App pre-requisites
   import_tasks:
