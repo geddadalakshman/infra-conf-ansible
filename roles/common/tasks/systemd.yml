@@ -3,7 +3,7 @@
     src: "{{ component }}.service"
     dest: /etc/systemd/system/{{ component }}.service
 
-- name: Enable and restart the service
+- name: Enable and restart the {{ component }} service
   systemd:
     name: "{{ component }}"
     enabled: true
