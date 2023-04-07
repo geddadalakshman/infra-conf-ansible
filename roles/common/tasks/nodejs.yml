@@ -1,27 +1,27 @@
-#- name: Configure Nodejs repo
-#  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-#
-#- name: Install nodejs
-#  yum:
-#    name: nodejs
-#    state: installed
-#
-#- name: app_preq
-#  import_tasks:
-#    file: app_preq.yml
-#
-#- name: Installing NodeJS Dependencies
-#  #  community.general.npm:
-#  #    path: /app
-#  shell: npm install
-#  args:
-#    chdir: /app
-#
-#- name: load schema
-#  import_tasks:
-#    file: schema-setup.yml
-#  when: schema_setup is defined
-#
-#- name: systemd setup
-#  import_tasks:
-#    file: systemd.yml
+- name: Configure Nodejs repo
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
+- name: Install nodejs
+  yum:
+    name: nodejs
+    state: installed
+
+- name: app_preq
+  import_tasks:
+    file: app_preq.yml
+
+- name: Installing NodeJS Dependencies
+  #  community.general.npm:
+  #    path: /app
+  shell: npm install
+  args:
+    chdir: /app
+
+- name: load schema
+  import_tasks:
+    file: schema-setup.yml
+  when: schema_setup is defined
+
+- name: systemd setup
+  import_tasks:
+    file: systemd.yml

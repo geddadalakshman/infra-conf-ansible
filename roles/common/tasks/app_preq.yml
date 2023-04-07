@@ -1,19 +1,19 @@
-#- name: Create Roboshop User
-#  ansible.builtin.user:
-#    name: roboshop
-#
-#- name: Deleting old content
-#  ansible.builtin.file:
-#    path: /app
-#    state: absent
-#
-#- name: creating application directory
-#  ansible.builtin.file:
-#    path: /app
-#    state: directory
-#
-#- name: Download dependencies of {{ component }}
-#  ansible.builtin.unarchive:
-#    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
-#    dest: /app
-#    remote_src: yes
+- name: Create Roboshop User
+  ansible.builtin.user:
+    name: roboshop
+
+- name: Deleting old content
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: creating application directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: Download dependencies of {{ component }}
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
+    dest: /app
+    remote_src: yes

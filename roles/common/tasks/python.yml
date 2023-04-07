@@ -1,25 +1,25 @@
-#- name: Install Python
-#  yum:
-#    name:
-#      - python36
-#      - gcc
-#      - python3-devel
-#
-#- name: App pre-requisites
-#  import_tasks:
-#    file: app_preq.yml
-#
-#- name: Install python dependencies
-#  ansible.builtin.pip:
-#    requirements: /app/requirements.txt
-#    executable: pip3.6
-#
-#- name: Schema Setup
-#  ansible.builtin.import_tasks:
-#    file: schema-setup.yml
-#  when: schema_type is defined
-#
-#- name: systemd setup
-#  import_tasks:
-#    file: systemd.yml
-#
+- name: Install Python
+  yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+
+- name: App pre-requisites
+  import_tasks:
+    file: app_preq.yml
+
+- name: Install python dependencies
+  ansible.builtin.pip:
+    requirements: /app/requirements.txt
+    executable: pip3.6
+
+- name: Schema Setup
+  ansible.builtin.import_tasks:
+    file: schema-setup.yml
+  when: schema_type is defined
+
+- name: systemd setup
+  import_tasks:
+    file: systemd.yml
+
