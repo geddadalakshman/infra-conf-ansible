@@ -1,21 +1,21 @@
-#- name: Setting up mongo repo
-#  copy:
-#    src: mongodb.repo
-#    dest: /etc/yum.repos.d/mongo.repo
-#
-#- name: Installing mongodb
-#  yum:
-#    name: mongodb-org
-#    state: installed
-#
-#- name: Changing the listener address from 120.0.0.1 to 0.0.0.0
-#  replace:
-#    path: /etc/mongod.conf
-#    regexp: 120.0.0.1
-#    replace: 0.0.0.0
-#
-#- name: Enabling and restarting the mongodb
-#  systemd:
-#    name: mongod
-#    state: restarted
-#    enabled: true
+- name: Setting up mongo repo
+  copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+- name: Installing mongodb
+  yum:
+    name: mongodb-org
+    state: installed
+
+- name: Changing the listener address from 120.0.0.1 to 0.0.0.0
+  replace:
+    path: /etc/mongod.conf
+    regexp: 120.0.0.1
+    replace: 0.0.0.0
+
+- name: Enabling and restarting the mongodb
+  systemd:
+    name: mongod
+    state: restarted
+    enabled: true
