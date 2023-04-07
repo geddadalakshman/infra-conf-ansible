@@ -2,15 +2,11 @@
   yum:
     name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
     state: installed
+    disable_gpg_check: yes
 
 - name: Install Redis 6.2
   ansible.builtin.dnf:
     name: '@redis:remi-6.2'
-    state: installed
-
-- name: Install redis repo file
-  yum:
-    name: redis
     state: installed
 
 - name: Changing the listener address from 120.0.0.1 to 0.0.0.0
