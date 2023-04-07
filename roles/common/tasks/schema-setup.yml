@@ -12,7 +12,7 @@
         state: installed
 
     - name: load schema
-      shell: mongo --host mongodb-dev.devops71.tech </app/schema/{{ component }}.js
+      shell: mongo --host mongodb-dev.devops71.tech < /app/schema/{{ component }}.js
 
 - name: MySQL Schema setup
   when: schema_type == "mysql"
