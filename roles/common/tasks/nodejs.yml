@@ -20,7 +20,7 @@
 - name: load schema
   import_tasks:
     file: schema-setup.yml
-  when: schema_setup is defined
+  when: schema_type is defined
 
 - name: systemd setup
   import_tasks:
