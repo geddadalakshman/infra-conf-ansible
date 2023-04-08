@@ -1,7 +1,5 @@
 - name: find ssm parameters
   hosts: localhost
   become: true
-
-- name: aws ssm parameters
   ansible.builtin.debug:
     msg: "{{ lookup('amazon.aws.aws_ssm', 'test1') }}"
