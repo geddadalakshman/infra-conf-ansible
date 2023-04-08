@@ -1,4 +1,4 @@
-- name: find ssm parameters
+- name: aws ssm parameters
   hosts: localhost
   tasks:
     - name: print
