@@ -1,6 +1,5 @@
 - name: find ssm parameters
   hosts: localhost
-  become: true
   tasks:
     - name: print
       ansible.builtin.debug:
