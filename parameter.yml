@@ -3,4 +3,4 @@
   tasks:
     - name: print
       debug:
-        msg: "{{ lookup('amazon.aws.aws_ssm', 'test1', region: 'us-east-1') }}"
+        msg: "{{ lookup('amazon.aws.aws_ssm', 'test1', region = 'us-east-1') }}"
