@@ -1,0 +1,6 @@
+- name: print parameters
+  hosts: localhost
+  tasks:
+    - name: print
+      debug:
+        msg: "{{ lookup('amazon.aws.aws_ssm', 'test1', region: 'us-east-1') }}"

@@ -1,6 +1,0 @@
-- name: print parameters
-  hosts: localhost
-  tasks:
-    - name: print
-      debug:
-        msg: "{{ lookup('amazon.aws.aws_ssm', 'dev.frontend.catalogue_url', region: 'us-east-1') }}"
