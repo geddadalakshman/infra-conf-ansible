@@ -1,5 +1,5 @@
 - name: systemd setup
-  copy:
+  template:
     src: "{{ component }}.service"
     dest: /etc/systemd/system/{{ component }}.service
 
