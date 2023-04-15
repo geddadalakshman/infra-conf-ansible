@@ -23,4 +23,4 @@
         state: installed
 
     - name: load schema
-      shell: mysql -h mysql-dev.devops71.tech -uroot -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.password < /app/schema/{{component}}.sql
+      shell: mysql -h mysql-dev.devops71.tech -ucentos -pRoboshop@1 < /app/schema/{{component}}.sql
