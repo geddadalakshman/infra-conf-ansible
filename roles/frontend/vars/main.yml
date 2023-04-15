@@ -1,2 +1,2 @@
 component: frontend
-#env: dev
+env: dev
